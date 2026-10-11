@@ -1,0 +1,5 @@
+Model,MAE,RMSE
+Persistence Baseline,31.46,45.11
+Random Forest,32.04,44.08
+Linear Regression,32.11,43.64
+HistGradientBoosting,32.14,44.94

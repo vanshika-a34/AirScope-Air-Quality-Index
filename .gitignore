@@ -1,0 +1,30 @@
+# Python Virtual Environments & Caches
+.venv/
+**/.venv/
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+**/.pytest_cache/
+.env
+.env.*
+!.env.example
+
+# Node Dependencies & Build Artifacts
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+
+# Editor / OS Metadata
+.DS_Store
+**/.DS_Store
+.vscode/
+.idea/
+
+# Temporary / Scratch Folders
+frontend copy/

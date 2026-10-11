@@ -1,0 +1,16 @@
+{
+    "city": "Delhi",
+    "model": "Linear Regression",
+    "target": "next_day_AQI",
+    "features": [
+        "aqi_today",
+        "aqi_1_day_ago",
+        "aqi_2_days_ago",
+        "aqi_3_days_ago",
+        "aqi_7_days_ago",
+        "forecast_month",
+        "forecast_day_of_week"
+    ],
+    "training_fraction": 0.8,
+    "data_end_date": "2020-06-30"
+}

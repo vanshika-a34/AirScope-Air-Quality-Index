@@ -1,0 +1,13 @@
+Train_fraction,Model,Test_rows,Test_start,Test_end,MAE,RMSE
+0.7,Persistence Baseline,590,2018-11-19,2020-06-30,35.74,49.79
+0.7,Linear Regression,590,2018-11-19,2020-06-30,35.04,47.21
+0.7,Random Forest,590,2018-11-19,2020-06-30,36.29,49.73
+0.7,HistGradientBoosting,590,2018-11-19,2020-06-30,36.24,50.14
+0.8,Persistence Baseline,394,2019-06-03,2020-06-30,31.46,45.11
+0.8,Linear Regression,394,2019-06-03,2020-06-30,32.11,43.64
+0.8,Random Forest,394,2019-06-03,2020-06-30,31.96,44.02
+0.8,HistGradientBoosting,394,2019-06-03,2020-06-30,32.03,44.87
+0.9,Persistence Baseline,197,2019-12-17,2020-06-30,31.37,41.95
+0.9,Linear Regression,197,2019-12-17,2020-06-30,29.83,38.41
+0.9,Random Forest,197,2019-12-17,2020-06-30,30.7,40.44
+0.9,HistGradientBoosting,197,2019-12-17,2020-06-30,31.67,41.39
