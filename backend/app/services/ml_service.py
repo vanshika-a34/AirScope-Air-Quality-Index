@@ -7,6 +7,8 @@ from app.models import MLEvaluationResponse, MLMetrics, HistoricalSampleRecord
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 ML_DIR = PROJECT_ROOT / "aqi_project_files"
+if not ML_DIR.exists():
+    ML_DIR = Path(__file__).resolve().parent.parent.parent / "aqi_project_files"
 
 def get_ml_evaluation_data() -> MLEvaluationResponse:
     config_path = ML_DIR / "model_config.json"
