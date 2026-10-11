@@ -243,8 +243,35 @@ pytest tests/test_api.py -v
 cd frontend
 npm run build
 ```
-- Executes `tsc -b` for strict typechecking across all components.
-- Compiles optimized static assets with zero errors or warnings.
+---
+
+## 📡 API Reference
+
+### `GET /api/health`
+Checks server and upstream data provider connectivity.
+```json
+{
+  "status": "healthy",
+  "provider": "Open-Meteo (CAMS / ECMWF / NOAA)",
+  "standard": "US EPA AQI (0-500)",
+  "timestamp": "2026-10-11T10:30:00Z"
+}
+```
+
+### `GET /api/search?q={query}`
+Performs global geocoding queries returning matching locations worldwide.
+
+### `GET /api/air-quality?lat={lat}&lon={lon}`
+Returns real-time air quality observations, criteria pollutant concentrations, individual EPA sub-indices, dominant pollutant, and ambient weather.
+
+### `GET /api/forecast?lat={lat}&lon={lon}&days=7`
+Returns 7-day hourly pollutant projections and 5-day daily forecast summaries.
+
+### `GET /api/regional-cities`
+Fetches real-time AQI and weather for 7 regional cities concurrently using non-blocking asynchronous requests.
+
+### `GET /api/ml/evaluation`
+Serves authentic historical evaluation benchmarks, exact feature coefficients, and test partition sample records for the Delhi model.
 
 ---
 
