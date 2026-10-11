@@ -11,7 +11,7 @@
 
 <br />
 
-> 🔗 **Live Web Application:** [https://your-airscope-app.vercel.app](https://your-airscope-app.vercel.app)  
+> 🔗 **Live Web Application:** [https://air-scope-aqi.vercel.app](https://air-scope-aqi.vercel.app)  
 <br />
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
