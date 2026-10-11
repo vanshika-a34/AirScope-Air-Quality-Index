@@ -12,8 +12,6 @@
 <br />
 
 > 🔗 **Live Web Application:** [https://your-airscope-app.vercel.app](https://your-airscope-app.vercel.app)  
-> 🔗 **Backend API Health:** [https://your-airscope-backend.onrender.com/api/health](https://your-airscope-backend.onrender.com/api/health)
-
 <br />
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
@@ -69,23 +67,26 @@ Unlike consumer applications that display unverified synthetic scores or opaque 
 AirScope seamlessly adapts between widescreen desktop monitors and mobile devices:
 - **Fluid Layout**: Natural single-column flow with zero horizontal scrolling and touch-friendly controls.
 - **Ergonomic Bottom Bar**: 4 evenly spaced navigation tabs (`Home`, `Map`, `Forecast`, `Insights`) with instant top-bar settings access.
-- **Mobile-Tailored Views**: 3-layer forecast hierarchy (Today centered, followed by paired 2-day rows), focused full-width regional map canvas, and vertically stacked ML inspection cards.
+- **Mobile-Tailored Views**: Focused full-width regional map canvas, and vertically stacked ML inspection cards.
 
 ---
 
 ## 📸 Interface Showcase
 
 ### Desktop Experience
-| Real-Time Atmospheric Dashboard | Regional Spatial Overview |
-|:---:|:---:|
-| ![Dashboard on Desktop](docs/screenshots/dashboard-desktop.png) | ![Map on Desktop](docs/screenshots/map-desktop.png) |
 
-| ML Model Benchmark & Integrity Laboratory |
+| Real-Time Atmospheric Dashboard |
 |:---:|
-| ![ML Insights on Desktop](docs/screenshots/insights-desktop.png) |
+| ![Dashboard on Desktop](docs/screenshots/dashboard-desktop.png) |
+
+
+| Regional Spatial Overview | ML Model Benchmark & Integrity Laboratory |
+|:---:|:---:|
+| ![Map on Desktop](docs/screenshots/map-desktop.png) | ![ML Insights on Desktop](docs/screenshots/insights-desktop.png) |
+
 
 ### Mobile Experience
-| 5-Day Atmospheric Forecast (3-Layer Hierarchy) | Settings & Environmental Provenance |
+| 5-Day Atmospheric Forecast | Settings & Environmental Provenance |
 |:---:|:---:|
 | ![Forecast on Mobile](docs/screenshots/forecast-mobile.png) | ![Settings on Mobile](docs/screenshots/settings-mobile.png) |
 
@@ -137,7 +138,7 @@ aqi/
 │   ├── tests/
 │   │   └── test_api.py              # Automated Pytest suite (10/10 test cases)
 │   ├── requirements.txt             # Python dependency manifest
-│   └── .venv/                       # Python virtual environment
+│   └── .gitignore                     
 ├── frontend/
 │   ├── src/
 │   │   ├── App.tsx                  # Main state container & view router
@@ -160,13 +161,12 @@ aqi/
 │   │       └── MobileView.tsx       # Dedicated responsive smartphone preview
 │   ├── vite.config.ts               # Vite configuration with /api backend proxy
 │   └── package.json                 # Node dependencies and build scripts
+├── docs/screenshots/                # Look of Website
 ├── aqi_project_files/               # Authentic Delhi Colab model artifacts
 │   ├── delhi_aqi_model.joblib       # Serialized Scikit-Learn linear regression model
 │   ├── delhi_model_data.csv         # Full 1,966-day historical dataset (2015-2020)
 │   ├── model_config.json            # Features, coefficients, and persistence baseline
 │   └── model_comparison.csv         # Benchmark comparison table across architectures
-├── PROJECT_AUDIT.md                 # Architecture audit and zero-hallucination report
-├── DECISIONS_AND_CHANGES.md         # Chronological project decision register
 └── README.md                        # Project documentation
 ```
 
@@ -219,9 +219,6 @@ npm install
 npm run dev
 ```
 
-- **Application URL**: `http://localhost:5173`
-
-*(The Vite development server is pre-configured to proxy all `/api` requests to `http://127.0.0.1:8000`).*
 
 ---
 
@@ -251,35 +248,6 @@ npm run build
 
 ---
 
-## 📡 API Reference
-
-### `GET /api/health`
-Checks server and upstream data provider connectivity.
-```json
-{
-  "status": "healthy",
-  "provider": "Open-Meteo (CAMS / ECMWF / NOAA)",
-  "standard": "US EPA AQI (0-500)",
-  "timestamp": "2026-10-11T10:30:00Z"
-}
-```
-
-### `GET /api/search?q={query}`
-Performs global geocoding queries returning matching locations worldwide.
-
-### `GET /api/air-quality?lat={lat}&lon={lon}`
-Returns real-time air quality observations, criteria pollutant concentrations, individual EPA sub-indices, dominant pollutant, and ambient weather.
-
-### `GET /api/forecast?lat={lat}&lon={lon}&days=7`
-Returns 7-day hourly pollutant projections and 5-day daily forecast summaries.
-
-### `GET /api/regional-cities`
-Fetches real-time AQI and weather for 7 regional cities concurrently using non-blocking asynchronous requests.
-
-### `GET /api/ml/evaluation`
-Serves authentic historical evaluation benchmarks, exact feature coefficients, and test partition sample records for the Delhi model.
-
----
 
 ## 🔬 Mathematical Standards & Policies
 
