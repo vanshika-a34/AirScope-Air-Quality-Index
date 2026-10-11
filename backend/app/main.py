@@ -41,6 +41,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {
+        "service": "AirScope — AQI Intelligence API",
+        "status": "online",
+        "docs_url": "/docs",
+        "health_url": "/api/health",
+        "version": "1.0.0",
+    }
+
 @app.get("/api/health")
 async def health_check():
     """Health check for backend server process (not a claim about external provider availability)."""
